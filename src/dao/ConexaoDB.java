@@ -5,10 +5,16 @@ import java.sql.SQLException;
 import java.sql.Connection;
 
 public class ConexaoDB {
-
-	private static final String USUARIO = "seunomedeusuario";
-	private static final String SENHA = "suasenha";
-	private static final String URL_BANCO = "jdbc:mysql://localhost:3306/onomedoseubanco";
+	
+	//coloque seu nome de usuario do mysql
+	private static final String USUARIO = "root";
+	
+	//coloque sua senha de conexão
+	private static final String SENHA = "";
+	
+	//se você não tiver o banco de dados criado, não coloque o nome do bd após a indicação do local host
+	//caso já tenha criado, coloque o nome do banco do banco de dados a ser utilizado
+	private static final String URL_BANCO = "jdbc:mysql://localhost:3306/projeti";
 	
 		
 	public static Connection getConnection() throws ClassNotFoundException, SQLException{
