@@ -1,6 +1,7 @@
 # amali-api
 
 13 de outubro de 2021.
+
 Olá. Este arquivo foi criado dia 12 de outubro e contém todas atualizações implementadas no periodo de 14 de setembro a 12 de outubro.
 
 Para facilitar a vida de todos, foi criado outros métodos que podem auxiliar o grupo no processo de criação do nosso projeto.
