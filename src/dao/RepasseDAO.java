@@ -48,9 +48,9 @@ public class RepasseDAO {
 				temporario.setAno (dados.getInt("ano"));
 				temporario.setEstado (dados.getString("estado"));
 				temporario.setMunicipio (dados.getString("municipio"));
-				temporario.setEsferaGoverno (dados.getString("esfera_governo"));
-				temporario.setModalidadeEnsino (dados.getString("modalidade_ensino"));
-				temporario.setValorTotalEscolas (dados.getDouble("valor_total_escolas"));
+				temporario.setEsferaGoverno (dados.getString("esferaGoverno"));
+				temporario.setModalidadeEnsino (dados.getString("modalidadeEnsino"));
+				temporario.setValorTotalEscolas (dados.getDouble("valorTotalEscolas"));
 				
 				repasse.add(temporario);
 			}

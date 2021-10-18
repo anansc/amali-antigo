@@ -113,11 +113,13 @@ public class Banco {
 			
 			
 	//	Listar repasse
-	/*	ArrayList<RepasseBean> repasses = RepasseDAO.listar();
+		ArrayList<RepasseBean> repasses = RepasseDAO.listar();
 		for(RepasseBean repasse: repasses){
-			System.out.println(repasse.getValorTotalEscolas());
+			System.out.println(repasse.getValorTotalEscolas()); 
+			System.out.println(repasse.getAno());
+			System.out.println(repasse.getEsferaGoverno());
 		}
-	*/
+	
 	
 	//	Adicionar repasse
 	/*	RepasseBean repasses = new RepasseBean();
