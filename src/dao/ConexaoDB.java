@@ -10,7 +10,7 @@ public class ConexaoDB {
 	private static final String USUARIO = "root";
 	
 	//coloque sua senha de conexão
-	private static final String SENHA = "";
+	private static final String SENHA = "Innounp163";
 	
 	//se você não tiver o banco de dados criado, não coloque o nome do bd após a indicação do local host
 	//caso já tenha criado, coloque o nome do banco do banco de dados a ser utilizado
