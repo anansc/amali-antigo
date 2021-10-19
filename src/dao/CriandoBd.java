@@ -87,5 +87,110 @@ public class CriandoBd {
 			}catch(Exception e) {
 				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
 			}
+		
+		String criarTbEscolas = "CREATE TABLE escolas (\r\n"
+				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  user_id bigint NOT NULL,\r\n"
+				+ "  city_id bigint NOT NULL,\r\n"
+				+ "  uuid uuid NOT NULL,\r\n"
+				+ "  name varchar(255) NOT NULL,\r\n"
+				+ "  email varchar(255) NOT NULL,\r\n"
+				+ "  cnpj varchar(255) NOT NULL,\r\n"
+				+ "  phone varchar(255) NOT NULL,\r\n"
+				+ "  address varchar(255) NOT NULL\r\n"
+				+ "  type varchar(255) NOT NULL\r\n"
+				+ "  created_at timestamp NOT NULL\r\n"
+				+ "  updated_at timestamp NOT NULL\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbAlunos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela escolas.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela escolas: "+e.toString());
+			}
+		///////////////////////////////////////////////////////////////////a fazer
+		String criarTbProdutos = "CREATE TABLE escolas (\r\n"
+				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbAlunos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela alunos.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
+			}
+		String criarTbOrganizações = "CREATE TABLE escolas (\r\n"
+				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbAlunos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela alunos.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
+			}
+		String criarTbDemandaEscolas = "CREATE TABLE escolas (\r\n"
+				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbAlunos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela alunos.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
+			}
+		String criarTbMapeamentoProdução = "CREATE TABLE escolas (\r\n"
+				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL,\r\n"
+				+ "   NOT NULL\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbAlunos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela alunos.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
+			}
 	}
 }
