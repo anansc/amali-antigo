@@ -24,10 +24,24 @@ public class Banco {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
 		//caso você ainda não tenha criado o banco de dados, execute o codigo a seguir.
-	/*	CriandoBd bd = new CriandoBd();
-		bd.criarBd();
-		bd.criarTabelas();
-	*/	
+		//Primeiro, mude o nome do usuario e senha de acordo com o utilizado no seu
+		//banco. Depois, siga os passos.
+	
+		//Primeiro você usa o metodo criarBd para criar o banco de dados.
+		/*	CriandoBd bd = new CriandoBd();
+			bd.criarBd();
+		*/		
+				
+		//Depois de criado, você modificia em ConexaoDb a url do banco de
+			 /* "jdbc:mysql://localhost:3306/" 
+			 * para:
+			 * "jdbc:mysql://localhost:3306/projeti"
+			 * 
+			 * E então é só executar o metodo a seguir.
+			 */
+				
+		/*	bd.criarTabelas();
+		*/	
 		
 			
 			
