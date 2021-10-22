@@ -20,6 +20,7 @@ public class CriandoBd {
 		conexao.close();
 		System.out.println("Foi criado o banco de dados 'projeti'.");
 		}catch(Exception e) {
+			
 			System.err.println("Erro ao criar o banco de dados: "+e.toString());
 		}
 	}
@@ -112,27 +113,40 @@ public class CriandoBd {
 				System.err.println("Erro ao criar a tabela escolas: "+e.toString());
 			}
 		///////////////////////////////////////////////////////////////////a fazer
-		String criarTbProdutos = "CREATE TABLE escolas (\r\n"
+		String criarTbProducao = "CREATE TABLE producao (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL,\r\n"
-				+ "   NOT NULL\r\n"
+				+ "  produto_id bigint NOT NULL,\r\n"
+				+ "  usuario_id BIGINT NOT NULL, \r\n"
+				+ "  organizacao_id bigint NOT NULL,\r\n"
+				+ "  uuid uuid NOT NULL,\r\n"
+				+ "  janeiro INTEGER NOT NULL,\r\n"
+				+ "  fevereiro INTERGER NOT NULL,\r\n"
+				+ "  marco INTERGER NOT NULL,\r\n"
+				+ "  abril INTERGER NOT NULL,\r\n"
+				+ "  maio INTERGER NOT NULL,\r\n"
+				+ "  junho INTERGER NOT NULL,\r\n"
+				+ "  julho INTERGER NOT NULL,\r\n"
+				+ "  agosto INTERGER NOT NULL,\r\n"
+				+ "  setembro INTERGER NOT NULL,\r\n"
+				+ "  outubro INTERGER NOT NULL,\r\n"
+				+ "  novembro INTERGER NOT NULL,\r\n"
+				+ "  dezembro INTERGER NOT NULL,\r\n"
+				+ "  ano VARCHAR(255) NOT NULL,\r\n"
+				+ "  tipo VARCHAR(255) NOT NULL,\r\n"
+				+ "  created_at TIMESTAMP, \r\n"
+				+ "  updated_at TIMESTAMP, \r\n"
+				+ "  deleted_at TIMESTAMP \r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		try {
 			Connection conexao = (Connection) ConexaoDB.getConnection();
-			PreparedStatement stmt = conexao.prepareStatement(criarTbAlunos);
+			PreparedStatement stmt = conexao.prepareStatement(criarTbProducao);
 			stmt.execute();
 			conexao.close();
-			System.out.println("Foi criada a tabela alunos.");
+			System.out.println("Foi criada a tabela producao.");
 			}catch(Exception e) {
-				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
+				System.err.println("Erro ao criar a tabela producao: "+e.toString());
 			}
-		String criarTbOrganizações = "CREATE TABLE escolas (\r\n"
+		String criarTbDemandaEscola = "CREATE TABLE DemandaEscola (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "   NOT NULL,\r\n"
 				+ "   NOT NULL,\r\n"
