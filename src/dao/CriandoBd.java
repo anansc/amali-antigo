@@ -55,15 +55,18 @@ public class CriandoBd {
 			}
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbOrganizacoes = "CREATE TABLE organizacoes (\r\n"
-				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  userid int NOT NULL,\r\n"
-				+ "  cidadeid int NOT NULL,\r\n"
+				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  usuario_id BIGINT NOT NULL,\r\n"
+				+ "  cidade_id BIGINT NOT NULL,\r\n"
+				+ "  uuid UUID NOT NULL,\r\n"
 				+ "  nome varchar(100) NOT NULL,\r\n"
 				+ "  email varchar(100) NOT NULL,\r\n"
 				+ "  cnpj varchar(100) NOT NULL,\r\n"
-				+ "  celular varchar(100) NOT NULL,\r\n"
+				+ "  telefone varchar(100) NOT NULL,\r\n"
 				+ "  endereco varchar(100) NOT NULL,\r\n"
 				+ "  tipo varchar(100) NOT NULL,\r\n"
+				+ "  created_at TIMESTAMP, \r\n"
+				+ "  updated_at TIMESTAMP \r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		
 		try {
