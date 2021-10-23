@@ -54,53 +54,6 @@ public class CriandoBd {
 				System.err.println("Erro ao criar a tabela alimentos: "+e.toString());
 			}
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		String criarTbOrganizacoes = "CREATE TABLE organizacoes (\r\n"
-				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  usuario_id BIGINT NOT NULL,\r\n"
-				+ "  cidade_id BIGINT NOT NULL,\r\n"
-				+ "  uuid UUID NOT NULL,\r\n"
-				+ "  nome varchar(100) NOT NULL,\r\n"
-				+ "  email varchar(100) NOT NULL,\r\n"
-				+ "  cnpj varchar(100) NOT NULL,\r\n"
-				+ "  telefone varchar(100) NOT NULL,\r\n"
-				+ "  endereco varchar(100) NOT NULL,\r\n"
-				+ "  tipo varchar(100) NOT NULL,\r\n"
-				+ "  created_at TIMESTAMP, \r\n"
-				+ "  updated_at TIMESTAMP \r\n"
-				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
-		
-		try {
-			Connection conexao = (Connection) ConexaoDB.getConnection();
-			PreparedStatement stmt = conexao.prepareStatement(criarTbOrganizacoes);
-			stmt.execute();
-			conexao.close();
-			System.out.println("Foi criada a tabela organizaçoes.");
-			}catch(Exception e) {
-				System.err.println("Erro ao criar a tabela organizações: "+e.toString());
-			}
-		
-		//////////////////////////////////////////////////////////////////////////////////////////////
-		String criarTabRepasse = "CREATE TABLE repasse (\r\n"
-				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  ano int NOT NULL,\r\n"
-				+ "  estado varchar(100) NOT NULL,\r\n"
-				+ "  municipio varchar(100) NOT NULL,\r\n"
-				+ "  esferaGoverno varchar(100) NOT NULL,\r\n"
-				+ "  modalidadeEnsino varchar(100) NOT NULL,\r\n"
-				+ "  valorTotalEscolas varchar(100) NOT NULL\r\n"
-				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
-		try {
-			Connection conexao = (Connection) ConexaoDB.getConnection();
-			PreparedStatement stmt = conexao.prepareStatement(criarTabRepasse);
-			stmt.execute();
-			conexao.close();
-			System.out.println("Foi criada a tabela repasse.");
-			}catch(Exception e) {
-				System.err.println("Erro ao criar a tabela repasse: "+e.toString());
-			}
-		
-		
-		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbAlunos = "CREATE TABLE alunos (\r\n"
 				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  codAlunosAtendidos int NOT NULL,\r\n"
@@ -121,8 +74,6 @@ public class CriandoBd {
 			}catch(Exception e) {
 				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
 			}
-		
-		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbEscolas = "CREATE TABLE escolas (\r\n"
@@ -148,6 +99,45 @@ public class CriandoBd {
 			}catch(Exception e) {
 				System.err.println("Erro ao criar a tabela escolas: "+e.toString());
 			}
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		String criarTbMDEscolas = "CREATE TABLE MapeamentoDemandasEscolas (\r\n"
+				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  produto_id BIGINT NOT NULL,\r\n"
+				+ "  usuario_id BIGINT NOT NULL,\r\n"
+				+ "  instituicao_id BIGINT NOT NULL,\r\n"
+				+ "  cidade_id BIGINT NOT NULL,\r\n"
+				+ "  uuid UUID NOT NULL,\r\n"
+				+ "  janeiro INTERGER NOT NULL,\r\n"
+				+ "  fevereiro INTERGER NOT NULL,\r\n"
+				+ "  marco INTERGER NOT NULL,\r\n"
+				+ "  abril INTERGER NOT NULL,\r\n"
+				+ "  maio INTERGER NOT NULL,\r\n"
+				+ "  junho INTERGER NOT NULL,\r\n"
+				+ "  julho INTERGER NOT NULL,\r\n"
+				+ "  agosto INTERGER NOT NULL,\r\n"
+				+ "  setembro INTERGER NOT NULL,\r\n"
+				+ "  outubro INTERGER NOT NULL,\r\n"
+				+ "  novembro INTERGER NOT NULL,\r\n"
+				+ "  dezembro INTERGER NOT NULL,\r\n"
+				+ "  ano varchar(100) NOT NULL,\r\n"
+				+ "  tipo varchar(100) NOT NULL,\r\n"
+				+ "  created_at TIMESTAMP, \r\n"
+				+ "  updated_at TIMESTAMP \r\n"
+				+ "  deleted_at TIMESTAMP \r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+				
+		try {
+				Connection conexao = (Connection) ConexaoDB.getConnection();
+				PreparedStatement stmt = conexao.prepareStatement(criarTbMDEscolas);
+				stmt.execute();
+				conexao.close();
+					System.out.println("Foi criada a tabela MDEscolas.");
+				}catch(Exception e) {
+					System.err.println("Erro ao criar a tabela MDEscolas: "+e.toString());
+				}
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbProducao = "CREATE TABLE producao (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
@@ -180,45 +170,59 @@ public class CriandoBd {
 			conexao.close();
 			System.out.println("Foi criada a tabela producao.");
 			}catch(Exception e) {
-				System.err.println("Erro ao criar a tabela producao: "+e.toString());
+			System.err.println("Erro ao criar a tabela producao: "+e.toString());
 			}
-		
-		
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		String criarTbMDEscolas = "CREATE TABLE MapeamentoDemandasEscolas (\r\n"
+		
+		String criarTbOrganizacoes = "CREATE TABLE organizacoes (\r\n"
 				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  produto_id BIGINT NOT NULL,\r\n"
 				+ "  usuario_id BIGINT NOT NULL,\r\n"
-				+ "  instituicao_id BIGINT NOT NULL,\r\n"
 				+ "  cidade_id BIGINT NOT NULL,\r\n"
 				+ "  uuid UUID NOT NULL,\r\n"
-				+ "  janeiro INTERGER NOT NULL,\r\n"
-				+ "  fevereiro INTERGER NOT NULL,\r\n"
-				+ "  marco INTERGER NOT NULL,\r\n"
-				+ "  abril INTERGER NOT NULL,\r\n"
-				+ "  maio INTERGER NOT NULL,\r\n"
-				+ "  junho INTERGER NOT NULL,\r\n"
-				+ "  julho INTERGER NOT NULL,\r\n"
-				+ "  agosto INTERGER NOT NULL,\r\n"
-				+ "  setembro INTERGER NOT NULL,\r\n"
-				+ "  outubro INTERGER NOT NULL,\r\n"
-				+ "  novembro INTERGER NOT NULL,\r\n"
-				+ "  dezembro INTERGER NOT NULL,\r\n"
-				+ "  ano varchar(100) NOT NULL,\r\n"
+				+ "  nome varchar(100) NOT NULL,\r\n"
+				+ "  email varchar(100) NOT NULL,\r\n"
+				+ "  cnpj varchar(100) NOT NULL,\r\n"
+				+ "  telefone varchar(100) NOT NULL,\r\n"
+				+ "  endereco varchar(100) NOT NULL,\r\n"
 				+ "  tipo varchar(100) NOT NULL,\r\n"
 				+ "  created_at TIMESTAMP, \r\n"
 				+ "  updated_at TIMESTAMP \r\n"
-				+ "  deleted_at TIMESTAMP \r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		
 		try {
 			Connection conexao = (Connection) ConexaoDB.getConnection();
-			PreparedStatement stmt = conexao.prepareStatement(criarTbMDEscolas);
+			PreparedStatement stmt = conexao.prepareStatement(criarTbOrganizacoes);
 			stmt.execute();
 			conexao.close();
 			System.out.println("Foi criada a tabela organizaçoes.");
 			}catch(Exception e) {
 				System.err.println("Erro ao criar a tabela organizações: "+e.toString());
 			}
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		String criarTbRepasse = "CREATE TABLE repasse (\r\n"
+				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  ano int NOT NULL,\r\n"
+				+ "  estado varchar(100) NOT NULL,\r\n"
+				+ "  municipio varchar(100) NOT NULL,\r\n"
+				+ "  esferaGoverno varchar(100) NOT NULL,\r\n"
+				+ "  modalidadeEnsino varchar(100) NOT NULL,\r\n"
+				+ "  valorTotalEscolas varchar(100) NOT NULL\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbRepasse);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela repasse.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela repasse: "+e.toString());
+			}
+		
+		
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		
 	}
 }

@@ -114,16 +114,16 @@ public class AlimentosDAO {
 	public static void atualizar(AlimentosBean alimentos) {
 		
 		
-		String sql = " UPDATE alimentos SET ano = ?, estado = ?, municipio = ?, regiao = ?, esferaGoverno = ?, etapaEnsino = ?, qtAlimentos = ? WHERE id = ?";
+		String sql = " UPDATE alimentos SET ano = ?, estado = ?, municipio = ?, entidadeExecutora = ?, agriculturaFamiliar = ?, organico = ?, nomeProduto = ?, documentoDespesa = ?, unidadeMedida = ?, qtComprada = ?, valorUnitario = ?, valorTotal = ? WHERE id = ?";
 		
 		try {
 			Connection conexao = (Connection) ConexaoDB.getConnection();
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-			
+		//	******************************
 			stmt.setInt    (1, alimentos.getAno());
-			stmt.setString (3, alimentos.getEstado());
-			stmt.setString (4, alimentos.getMunicipio());
-			stmt.setString (2, alimentos.getEntidadeExecutora());
+			stmt.setString (2, alimentos.getEstado());
+			stmt.setString (3, alimentos.getMunicipio());
+			stmt.setString (4, alimentos.getEntidadeExecutora());
 			stmt.setBoolean(5, alimentos.getAgriculturaFamiliar());
 			stmt.setBoolean(6, alimentos.getOrganico());
 			stmt.setString (7, alimentos.getNomeProduto());
