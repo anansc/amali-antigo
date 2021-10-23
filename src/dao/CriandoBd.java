@@ -184,5 +184,41 @@ public class CriandoBd {
 			}
 		
 		
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		String criarTbMDEscolas = "CREATE TABLE MapeamentoDemandasEscolas (\r\n"
+				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  produto_id BIGINT NOT NULL,\r\n"
+				+ "  usuario_id BIGINT NOT NULL,\r\n"
+				+ "  instituicao_id BIGINT NOT NULL,\r\n"
+				+ "  cidade_id BIGINT NOT NULL,\r\n"
+				+ "  uuid UUID NOT NULL,\r\n"
+				+ "  janeiro INTERGER NOT NULL,\r\n"
+				+ "  fevereiro INTERGER NOT NULL,\r\n"
+				+ "  marco INTERGER NOT NULL,\r\n"
+				+ "  abril INTERGER NOT NULL,\r\n"
+				+ "  maio INTERGER NOT NULL,\r\n"
+				+ "  junho INTERGER NOT NULL,\r\n"
+				+ "  julho INTERGER NOT NULL,\r\n"
+				+ "  agosto INTERGER NOT NULL,\r\n"
+				+ "  setembro INTERGER NOT NULL,\r\n"
+				+ "  outubro INTERGER NOT NULL,\r\n"
+				+ "  novembro INTERGER NOT NULL,\r\n"
+				+ "  dezembro INTERGER NOT NULL,\r\n"
+				+ "  ano varchar(100) NOT NULL,\r\n"
+				+ "  tipo varchar(100) NOT NULL,\r\n"
+				+ "  created_at TIMESTAMP, \r\n"
+				+ "  updated_at TIMESTAMP \r\n"
+				+ "  deleted_at TIMESTAMP \r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbMDEscolas);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela organizaçoes.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela organizações: "+e.toString());
+			}
 	}
 }
