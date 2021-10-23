@@ -26,6 +26,8 @@ public class CriandoBd {
 	}
 	
 	public void criarTabelas() throws SQLException{
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbAlimentos = "CREATE TABLE alimentos (\r\n"
 				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  ano int NOT NULL,\r\n"
@@ -42,19 +44,26 @@ public class CriandoBd {
 				+ "  valorTotal float NOT NULL\r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbAlimentos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela alimentos.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela alimentos: "+e.toString());
+			}
+		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbOrganizacoes = "CREATE TABLE organizacoes (\r\n"
-				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  user_id BIGINT NOT NULL,\r\n"
-				+ "  city_id BIGINT NOT NULL,\r\n"
-				+ "  uuid UUID NOT NULL,\r\n"
+				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  userid int NOT NULL,\r\n"
+				+ "  cidadeid int NOT NULL,\r\n"
 				+ "  nome varchar(100) NOT NULL,\r\n"
 				+ "  email varchar(100) NOT NULL,\r\n"
 				+ "  cnpj varchar(100) NOT NULL,\r\n"
-				+ "  phone varchar(100) NOT NULL,\r\n"
-				+ "  address varchar(100) NOT NULL,\r\n"
-				+ "  type varchar(100) NOT NULL,\r\n"
-				+ "  created_at TIMESTAMP, \r\n"
-				+ "  updated_at TIMESTAMP \r\n"
+				+ "  celular varchar(100) NOT NULL,\r\n"
+				+ "  endereco varchar(100) NOT NULL,\r\n"
+				+ "  tipo varchar(100) NOT NULL,\r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		
 		try {
@@ -62,10 +71,12 @@ public class CriandoBd {
 			PreparedStatement stmt = conexao.prepareStatement(criarTbOrganizacoes);
 			stmt.execute();
 			conexao.close();
-			System.out.println("Foi criada a tabela alimentos.");
+			System.out.println("Foi criada a tabela organizaçoes.");
 			}catch(Exception e) {
-				System.err.println("Erro ao criar a tabela alimentos: "+e.toString());
+				System.err.println("Erro ao criar a tabela organizações: "+e.toString());
 			}
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTabRepasse = "CREATE TABLE repasse (\r\n"
 				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  ano int NOT NULL,\r\n"
@@ -84,6 +95,9 @@ public class CriandoBd {
 			}catch(Exception e) {
 				System.err.println("Erro ao criar a tabela repasse: "+e.toString());
 			}
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbAlunos = "CREATE TABLE alunos (\r\n"
 				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  codAlunosAtendidos int NOT NULL,\r\n"
@@ -105,6 +119,9 @@ public class CriandoBd {
 				System.err.println("Erro ao criar a tabela alunos: "+e.toString());
 			}
 		
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbEscolas = "CREATE TABLE escolas (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  user_id bigint NOT NULL,\r\n"
@@ -113,9 +130,9 @@ public class CriandoBd {
 				+ "  nome varchar(255) NOT NULL,\r\n"
 				+ "  email varchar(255) NOT NULL,\r\n"
 				+ "  cnpj varchar(255) NOT NULL,\r\n"
-				+ "  telefone varchar(255) NOT NULL,\r\n"
-				+ "  endereço varchar(255) NOT NULL\r\n"
-				+ "  ti varchar(255) NOT NULL\r\n"
+				+ "  phone varchar(255) NOT NULL,\r\n"
+				+ "  address varchar(255) NOT NULL\r\n"
+				+ "  type varchar(255) NOT NULL\r\n"
 				+ "  created_at timestamp NOT NULL\r\n"
 				+ "  updated_at timestamp NOT NULL\r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
@@ -128,7 +145,7 @@ public class CriandoBd {
 			}catch(Exception e) {
 				System.err.println("Erro ao criar a tabela escolas: "+e.toString());
 			}
-		///////////////////////////////////////////////////////////////////a fazer
+		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbProducao = "CREATE TABLE producao (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  produto_id bigint NOT NULL,\r\n"
