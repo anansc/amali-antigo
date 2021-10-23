@@ -43,15 +43,18 @@ public class CriandoBd {
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		
 		String criarTbOrganizacoes = "CREATE TABLE organizacoes (\r\n"
-				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  userid int NOT NULL,\r\n"
-				+ "  cidadeid int NOT NULL,\r\n"
+				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  user_id BIGINT NOT NULL,\r\n"
+				+ "  city_id BIGINT NOT NULL,\r\n"
+				+ "  uuid UUID NOT NULL,\r\n"
 				+ "  nome varchar(100) NOT NULL,\r\n"
 				+ "  email varchar(100) NOT NULL,\r\n"
 				+ "  cnpj varchar(100) NOT NULL,\r\n"
-				+ "  celular varchar(100) NOT NULL,\r\n"
-				+ "  endereco varchar(100) NOT NULL,\r\n"
-				+ "  tipo varchar(100) NOT NULL,\r\n"
+				+ "  phone varchar(100) NOT NULL,\r\n"
+				+ "  address varchar(100) NOT NULL,\r\n"
+				+ "  type varchar(100) NOT NULL,\r\n"
+				+ "  created_at TIMESTAMP, \r\n"
+				+ "  updated_at TIMESTAMP \r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 		
 		try {
@@ -112,7 +115,7 @@ public class CriandoBd {
 				+ "  cnpj varchar(255) NOT NULL,\r\n"
 				+ "  telefone varchar(255) NOT NULL,\r\n"
 				+ "  endereço varchar(255) NOT NULL\r\n"
-				+ "  tipo varchar(255) NOT NULL\r\n"
+				+ "  ti varchar(255) NOT NULL\r\n"
 				+ "  created_at timestamp NOT NULL\r\n"
 				+ "  updated_at timestamp NOT NULL\r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
