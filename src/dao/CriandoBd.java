@@ -24,7 +24,6 @@ public class CriandoBd {
 			System.err.println("Erro ao criar o banco de dados: "+e.toString());
 		}
 	}
-	
 	public void criarTabelas() throws SQLException{
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
