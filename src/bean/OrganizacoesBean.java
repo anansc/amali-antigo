@@ -1,6 +1,6 @@
 package bean;
 
-public class Organizacoes {
+public class OrganizacoesBean {
 		
 	private int id;
 	private String nome;

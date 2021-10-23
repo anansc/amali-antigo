@@ -1,6 +1,6 @@
 package bean;
 
-public class MDEscolas {
+public class MDEscolasBean {
 		
 	private int id;
 	private int janeiro;

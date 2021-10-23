@@ -1,6 +1,6 @@
 package bean;
 
-public class Produtos {
+public class ProdutosBean {
 	
 	private int id;
 	private int categoria_id;
