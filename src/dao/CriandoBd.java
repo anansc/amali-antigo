@@ -34,10 +34,10 @@ public class CriandoBd {
 				+ "  estado varchar(100) NOT NULL,\r\n"
 				+ "  municipio varchar(100) NOT NULL,\r\n"
 				+ "  entidadeExecutora varchar(100) NOT NULL,\r\n"
-				+ "  agriculturaFamiliar tinyint(1) NOT NULL,\r\n"
-				+ "  organico tinyint(1) NOT NULL,\r\n"
+				+ "  agriculturaFamiliar varchar(100) NOT NULL,\r\n"
+				+ "  organico varchar(100) NOT NULL,\r\n"
 				+ "  nomeProduto varchar(100)  NOT NULL,\r\n"
-				+ "  documentoDespesa int NOT NULL,\r\n"
+				+ "  documentoDespesa varchar(100) NOT NULL,\r\n"
 				+ "  uMedida varchar(100)  NOT NULL,\r\n"
 				+ "  qtComprada float NOT NULL,\r\n"
 				+ "  valorUnitario float NOT NULL,\r\n"
@@ -78,15 +78,15 @@ public class CriandoBd {
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbEscolas = "CREATE TABLE escolas (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  user_id bigint NOT NULL,\r\n"
-				+ "  city_id bigint NOT NULL,\r\n"
-				+ "  uuid uuid NOT NULL,\r\n"
+				+ "  usuario_id bigint,\r\n"
+				+ "  cidade_id bigint,\r\n"
+				+ "  uuid uuid,\r\n"
 				+ "  nome varchar(255) NOT NULL,\r\n"
 				+ "  email varchar(255) NOT NULL,\r\n"
 				+ "  cnpj varchar(255) NOT NULL,\r\n"
-				+ "  phone varchar(255) NOT NULL,\r\n"
-				+ "  address varchar(255) NOT NULL\r\n"
-				+ "  type varchar(255) NOT NULL\r\n"
+				+ "  telefone varchar(255) NOT NULL,\r\n"
+				+ "  endereco varchar(255) NOT NULL\r\n"
+				+ "  tipo varchar(255) NOT NULL\r\n"
 				+ "  created_at timestamp NOT NULL\r\n"
 				+ "  updated_at timestamp NOT NULL\r\n"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
@@ -107,7 +107,6 @@ public class CriandoBd {
 				+ "  produto_id BIGINT NOT NULL,\r\n"
 				+ "  usuario_id BIGINT NOT NULL,\r\n"
 				+ "  instituicao_id BIGINT NOT NULL,\r\n"
-				+ "  cidade_id BIGINT NOT NULL,\r\n"
 				+ "  uuid UUID NOT NULL,\r\n"
 				+ "  janeiro INTERGER NOT NULL,\r\n"
 				+ "  fevereiro INTERGER NOT NULL,\r\n"
@@ -141,9 +140,9 @@ public class CriandoBd {
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		String criarTbProducao = "CREATE TABLE producao (\r\n"
 				+ "  id bigint AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  produto_id bigint NOT NULL,\r\n"
-				+ "  usuario_id BIGINT NOT NULL, \r\n"
-				+ "  organizacao_id bigint NOT NULL,\r\n"
+				+ "  produto_id bigint,\r\n"
+				+ "  usuario_id BIGINT, \r\n"
+				+ "  organizacao_id bigint,\r\n"
 				+ "  uuid uuid NOT NULL,\r\n"
 				+ "  janeiro INTEGER NOT NULL,\r\n"
 				+ "  fevereiro INTERGER NOT NULL,\r\n"
@@ -172,12 +171,34 @@ public class CriandoBd {
 			}catch(Exception e) {
 			System.err.println("Erro ao criar a tabela producao: "+e.toString());
 			}
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////
+		String criarTbProdutos = "CREATE TABLE produtos (\r\n"
+				+ "  id int AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
+				+ "  categoria_id BIGINT, \r\n"
+				+ "  uuid UUID ,\r\n"
+				+ "  nome varchar(100) NOT NULL,\r\n"
+				+ "  unidade varchar(100) NOT NULL,\r\n"
+				+ "  created_at TIMESTAMP,\r\n"
+				+ "  updated_at TIMESTAMP,\r\n"
+				+ "  deleted_at TIMESTAMP\r\n"
+				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+		try {
+			Connection conexao = (Connection) ConexaoDB.getConnection();
+			PreparedStatement stmt = conexao.prepareStatement(criarTbProdutos);
+			stmt.execute();
+			conexao.close();
+			System.out.println("Foi criada a tabela produtos.");
+			}catch(Exception e) {
+				System.err.println("Erro ao criar a tabela produtos: "+e.toString());
+			}
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		
 		
 		String criarTbOrganizacoes = "CREATE TABLE organizacoes (\r\n"
 				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
-				+ "  usuario_id BIGINT NOT NULL,\r\n"
-				+ "  cidade_id BIGINT NOT NULL,\r\n"
+				+ "  usuario_id BIGINT,\r\n"
+				+ "  cidade_id BIGINT,\r\n"
 				+ "  uuid UUID NOT NULL,\r\n"
 				+ "  nome varchar(100) NOT NULL,\r\n"
 				+ "  email varchar(100) NOT NULL,\r\n"
@@ -222,7 +243,6 @@ public class CriandoBd {
 		
 		
 		
-		//////////////////////////////////////////////////////////////////////////////////////////////
-		
+
 	}
 }
