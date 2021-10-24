@@ -101,7 +101,7 @@ public class CriandoBd {
 		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		String criarTbMDEscolas = "CREATE TABLE MapeamentoDemandasEscolas (\r\n"
+		String criarTbMdEscolas = "CREATE TABLE mdEscolas (\r\n"
 				+ "  id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,\r\n"
 				+ "  produto_id BIGINT NOT NULL,\r\n"
 				+ "  usuario_id BIGINT NOT NULL,\r\n"
@@ -128,12 +128,12 @@ public class CriandoBd {
 				
 		try {
 				Connection conexao = (Connection) ConexaoDB.getConnection();
-				PreparedStatement stmt = conexao.prepareStatement(criarTbMDEscolas);
+				PreparedStatement stmt = conexao.prepareStatement(criarTbMdEscolas);
 				stmt.execute();
 				conexao.close();
-					System.out.println("Foi criada a tabela MDEscolas.");
+					System.out.println("Foi criada a tabela MdEscolas.");
 				}catch(Exception e) {
-					System.err.println("Erro ao criar a tabela MDEscolas: "+e.toString());
+					System.err.println("Erro ao criar a tabela MdEscolas: "+e.toString());
 				}
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////

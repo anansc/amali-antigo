@@ -1,6 +1,6 @@
 package bean;
 
-public class MDEscolasBean {
+public class MdEscolasBean {
 		
 	private int id;
 	private int janeiro;
@@ -13,9 +13,18 @@ public class MDEscolasBean {
 	private int agosto;
 	private int setembro;
 	private int outubro;
+	private int novembro;
 	private int dezembro;
 	private String ano;
 	private String tipo;
+	
+	public int getNovembro() {
+		return novembro;
+	}
+	public void setNovembro(int novembro) {
+		this.novembro = novembro;
+	}
+	
 	public int getId() {
 		return id;
 	}
