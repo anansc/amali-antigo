@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("/repasse")
+@RequestMapping("/alimentos")
 
 public class AlimentosController {
 	
@@ -26,8 +26,8 @@ public class AlimentosController {
 	}
 	
 	@PostMapping
-	public AlimentosBean adicionar (@RequestBody AlimentosBean repasseBean) {
-		return repasseRepository.save(repasseBean);
+	public AlimentosBean adicionar (@RequestBody AlimentosBean alimentosBean) {
+		return repasseRepository.save(alimentosBean);
 	}
 
 }

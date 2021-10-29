@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("/repasse")
+@RequestMapping("/demandaEscolas")
 
 public class DemandaEscolasController {
 	
 	@Autowired
-	private DemandaEscolasRepository repasseRepository;
+	private DemandaEscolasRepository demandaEscolasRepository;
 	
 	@GetMapping
 	public List<DemandaEscolasBean> listar() {
-		return repasseRepository.findAll();
+		return demandaEscolasRepository.findAll();
 	}
 	
 	@PostMapping
-	public DemandaEscolasBean adicionar (@RequestBody DemandaEscolasBean repasseBean) {
-		return repasseRepository.save(repasseBean);
+	public DemandaEscolasBean adicionar (@RequestBody DemandaEscolasBean demandaEscolasBean) {
+		return demandaEscolasRepository.save(demandaEscolasBean);
 	}
 
 }
